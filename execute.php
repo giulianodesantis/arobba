@@ -128,6 +128,8 @@ function processMessage($message) {
         'resize_keyboard' => true)));
     } else if ($text === "Hello" || $text === "Hi") {
       apiRequest("sendMessage", array('chat_id' => $chat_id, "text" => 'Nice to meet you'));
+    } else if ($text === "aho") {
+      apiRequest("sendMessage", array('chat_id' => $chat_id, "text" => 'Cosa vuoi?'));
     } else if (strpos($text, "/stop") === 0) {
       // stop now
     } else {
@@ -139,7 +141,7 @@ function processMessage($message) {
 }
 
 
-define('WEBHOOK_URL', 'https://my-site.example.com/secret-path-for-webhooks/');
+define('WEBHOOK_URL', 'https://stark-reef-82734.herokuapp.com/execute.php/');
 
 if (php_sapi_name() == 'cli') {
   // if run from console, set or delete webhook
